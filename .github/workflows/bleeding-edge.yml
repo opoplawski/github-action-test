@@ -36,5 +36,7 @@ jobs:
           python -m pip install --force-reinstall git+http://github.com/enthought/traits.git#egg=traits
       - name: Sanity check dependencies
         run: python -m pip list
-      - name: List packages
-        run: dpkg -l
+      - name: Run test suite
+        uses: GabrielBB/xvfb-action@v1
+        with:
+          run: dpkg -l
